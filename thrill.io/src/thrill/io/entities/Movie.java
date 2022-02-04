@@ -1,6 +1,9 @@
 package thrill.io.entities;
 
+import java.util.Arrays;
+
 public class Movie extends Bookmark  {
+	
 	private int releaseYear;
 	private String[] cast;
 	private String[] director;
@@ -45,6 +48,12 @@ public class Movie extends Bookmark  {
 
 	public void setImdbRating(double imdbRating) {
 		this.imdbRating = imdbRating;
+	}
+
+	@Override
+	public String toString() {
+		return "Movie [releaseYear=" + releaseYear + ", cast=" + Arrays.toString(cast) + ", director="
+				+ Arrays.toString(director) + ", genre=" + genre + ", imdbRating=" + imdbRating + "]";
 	}
 	
 	
