@@ -2,6 +2,8 @@ package thrill.io.entities;
 
 import java.util.Arrays;
 
+import thrill.io.constants.MovieGenre;
+
 public class Movie extends Bookmark  {
 	
 	private int releaseYear;
@@ -54,6 +56,15 @@ public class Movie extends Bookmark  {
 	public String toString() {
 		return "Movie [releaseYear=" + releaseYear + ", cast=" + Arrays.toString(cast) + ", director="
 				+ Arrays.toString(director) + ", genre=" + genre + ", imdbRating=" + imdbRating + "]";
+	}
+
+	@Override
+	public boolean isKidFriendlyEligible() {
+		// TODO Auto-generated method stub
+		if (genre.equals(MovieGenre.HORROR) || genre.equals(MovieGenre.THRILLERS))
+			return false;
+		else
+			return true;
 	}
 	
 	
