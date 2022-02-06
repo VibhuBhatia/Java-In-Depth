@@ -5,6 +5,8 @@ import thrill.io.dao.BookmarkDao;
 import thrill.io.entities.Book;
 import thrill.io.entities.Bookmark;
 import thrill.io.entities.Movie;
+import thrill.io.entities.User;
+import thrill.io.entities.UserBookmark;
 import thrill.io.entities.WebLink;
 
 public class BookmarkManager {
@@ -59,5 +61,11 @@ public class BookmarkManager {
 		return dao.getBookmarks();
 	}
 
-
+	public void saveUserBookmark(User user, Bookmark bookmark) {
+		UserBookmark userBookmark = new UserBookmark();
+		userBookmark.setUser(user);
+		userBookmark.setBookmark(bookmark);
+		dao.saveUserBookmark(userBookmark);
+		
+	}
 }
